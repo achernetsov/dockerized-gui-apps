@@ -27,3 +27,7 @@ for windows-only games:
 4. steamwin:wine
 5. game-specific:steamwin
 
+# resources
+nvidia driver: https://github.com/NVIDIA/nvidia-docker/wiki/NVIDIA-driver
+glxgears X11 no protocol found: https://unix.stackexchange.com/a/118826
+

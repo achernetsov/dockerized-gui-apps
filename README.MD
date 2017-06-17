@@ -4,7 +4,7 @@ docker images to play games on linux, thus, keeping system configuration clean.
 ## images must follow rules:
 1. fine-grained for simple debugging, updating and interchanging
 
-so, if you have amd vide, you can just inherit wine image from amd, and everything should work
+so, if you have amd video, you can inherit wine image from amd, and everything should work
 
 2. testable
 

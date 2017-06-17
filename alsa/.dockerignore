@@ -1,2 +1,4 @@
 resources
 playsound.sh
+.gitignore
+build.sh

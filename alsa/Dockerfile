@@ -1,7 +1,3 @@
-FROM ubuntu:latest
+FROM ubuntu:16.04
 
 RUN apt-get update && apt-get install -y alsa-base
-
-#uncomment for test to work
-#RUN mkdir /sounds
-#ENTRYPOINT ["aplay"]

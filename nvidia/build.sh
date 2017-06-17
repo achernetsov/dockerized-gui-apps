@@ -1,1 +1,1 @@
-docker build -t achernetzov/glxgears .
+docker build -t achernetzov/nvidia .

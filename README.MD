@@ -11,6 +11,9 @@ so, if you have amd video, you can inherit wine image from amd, and everything s
 to avoid running steam, install game, to only found that sound doesn't work, 
 every image should have simple test. for example, alsa have playsound.sh to check that sound works.
 
+# nvidia
+## prerequisites
+need to install nvidia-docker: https://github.com/NVIDIA/nvidia-docker/wiki/Installation
 
 # images hierarchy
 1. alsa

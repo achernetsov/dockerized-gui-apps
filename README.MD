@@ -16,6 +16,10 @@ every image should have simple test. for example, alsa have playsound.sh to chec
 # nvidia
 ## prerequisites
 need to install nvidia-docker: https://github.com/NVIDIA/nvidia-docker/wiki/Installation
+need to run for nvidia-docker to work:
+```
+sudo nvidia-docker-plugin
+```
 
 # images hierarchy
 1. alsa

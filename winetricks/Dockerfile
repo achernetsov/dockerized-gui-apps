@@ -6,4 +6,7 @@ RUN wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/wine
 
 #RUN winetricks vcrun2015
 
+# for winetricks gui
+#RUN apt-get install -y zenity && cabextract
+
 

@@ -1,0 +1,36 @@
+version: '2'
+
+services:
+  steam-tianon:
+    image: achernetzov/steamos
+    network_mode: host
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:ro
+      - $XAUTHORITY:/tmp/.host_Xauthority:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/machine-id:/etc/machine-id:ro
+      #- $XDG_RUNTIME_DIR/pulse:/run/user/1000/pulse
+      - ./steam-data:/home/steam
+      #- /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket:ro
+      # Ubuntu's NVIDIA driver:
+      #- /usr/lib32/nvidia-375:/h1_64:ro
+      # Ubuntu's generic libGL:
+      #- /usr/lib/x86_64-linux-gnu:/h8_64:ro
+      #- /usr/lib/i386-linux-gnu:/h9_32:ro
+      - /dev/shm:/dev/shm
+    dns: steam # a DNS cache is needed to avoid upstream bug https://github.com/ValveSoftware/steam-for-linux/issues/3401
+    devices:
+      #- /dev/nvidia0
+      #- /dev/nvidiactl
+      #- /dev/nvidia-uvm
+      # uncomment this when running NVIDIA Driver >= 361
+      #- /dev/nvidia-modeset
+      #- /dev/dri
+      - /dev/snd
+    environment:
+      - DISPLAY=$DISPLAY
+      #- PULSE_SERVER=unix:$XDG_RUNTIME_DIR/pulse/native
+      # Use Steam provided runtime, requires --reset
+      # Steam provided runtime seems to be less stable with this image
+      # - STEAM_RUNTIME=1
+    shm_size: 4G

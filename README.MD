@@ -3,6 +3,10 @@ docker images to play games on linux, thus, keeping system configuration clean.
 
 for now only nvidia and alsa implemented, but you free to contribute amd, pulseaudio, etc., following design rules;
 
+windows steam (steam + wine) works (instructions will be soon)
+
+steam-os will not be supported; goals of this repo achieved install steam using flatpak;
+
 ## not working / in progress...
 1. steam-os failed on loading steam
 2. proper security for wine-data
@@ -42,7 +46,10 @@ for windows-only games:
 
 # resources
 nvidia driver: https://github.com/NVIDIA/nvidia-docker/wiki/NVIDIA-driver
+
 glxgears "X11 no protocol found" error fix: https://unix.stackexchange.com/a/118826
+
+ms fonts: https://askubuntu.com/questions/86335/installing-other-fonts-on-wine
 
 # acknowledgements
 https://github.com/arno01/steam - some of steam-os work derived from here

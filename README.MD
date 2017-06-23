@@ -3,7 +3,7 @@ docker + wine for running windows apps (or games) on linux and keeping host syst
 
 only nvidia and alsa implemented, but you feel free to contribute and add amd, pulseaudio, etc., following design rules;
 
-steam-os will not be supported, only windows steam will; recommended way to install steamos is using flatpak;
+steam-os will not be supported, only windows steam; recommended way to install steamos is using flatpak;
 
 # nvidia prerequisites
 need to install nvidia-docker: https://github.com/NVIDIA/nvidia-docker/wiki/Installation
@@ -16,11 +16,14 @@ cd winetricks
 ```
 
 # example of running windows steam
-1. run achernetsov/winetricks: ```cd winetricks && ./run.sh
-2. init wine prefix, for example: WINEPREFIX="$HOME/win32" WINEARCH=win32 wine wineboot
-3. download steam installator: wget https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
-4. install steam: WINEPREFIX="$HOME/win32" WINEARCH=win32 wine SteamSetup.exe
-5. run steam WINEPREFIX="$HOME/win32" WINEARCH=win32 wine [path to steam.exe inside win32]
+1. clone this repo to use run.sh script: ```git clone https://github.com/achernetsov/dockerized-steam && cd dockerized-steam```
+2. create directory to persist /home/wine between container sessions: ```mkdir wine-home```
+3. run nvidia-docker-plugin: ```sudo nvidia-docker-plugin```
+4. run achernetsov/winetricks: ```cd winetricks && ./run.sh```; after this command you will be inside container shell: ```wine@myhost:~$```
+5. init wine prefix, for example: WINEPREFIX="$HOME/win32" WINEARCH=win32 wine wineboot
+6. download steam installator: wget https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
+7. install steam: WINEPREFIX="$HOME/win32" WINEARCH=win32 wine SteamSetup.exe
+8. run steam WINEPREFIX="$HOME/win32" WINEARCH=win32 wine [path to steam.exe inside win32]
 
 you could create wine prefix for specific setup and use shared Steam folder. read wine documentation: https://www.winehq.org/
 

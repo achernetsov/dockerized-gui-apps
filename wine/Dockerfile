@@ -8,3 +8,12 @@ RUN dpkg --add-architecture i386 \
 && apt-add-repository https://dl.winehq.org/wine-builds/ubuntu/ \
 && apt-get update \
 && apt-get install --install-recommends -y winehq-stable
+
+RUN apt-get install -y sudo \
+&& echo 'wine ALL = NOPASSWD: ALL' > /etc/sudoers.d/wine && chmod 0440 /etc/sudoers.d/wine
+
+RUN adduser --disabled-password --gecos 'wine' wine && \
+	usermod -a -G video,audio wine
+USER wine
+ENV HOME /home/wine
+VOLUME /home/wine

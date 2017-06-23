@@ -24,7 +24,7 @@ cd winetricks
 
 you could create wine prefix for specific setup and use shared Steam folder. read wine documentation: https://www.winehq.org/
 
-# design rules:
+# design rules for Dockerfiles:
 1. fine-grained for simple debugging, updating and interchanging
 2. testable: 
 to avoid running steam, install game, to only find that sound doesn't work, 

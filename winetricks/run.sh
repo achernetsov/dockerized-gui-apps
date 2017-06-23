@@ -18,4 +18,4 @@ nvidia-docker run --rm -it \
 -v $(pwd)/../wine-home:/home/wine \
 --net=host \
 --shm-size="4G" \
- achernetzov/winetricks /bin/bash
+ achernetsov/winetricks /bin/bash

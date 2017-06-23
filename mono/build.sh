@@ -1,1 +1,1 @@
-docker build -t achernetzov/mono .
+docker build -t achernetsov/mono .

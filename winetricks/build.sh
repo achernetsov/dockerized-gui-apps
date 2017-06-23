@@ -1,1 +1,1 @@
-docker build -t achernetzov/winetricks .
+docker build -t achernetsov/winetricks .

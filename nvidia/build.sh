@@ -1,1 +1,1 @@
-docker build -t achernetzov/nvidia .
+docker build -t achernetsov/nvidia .

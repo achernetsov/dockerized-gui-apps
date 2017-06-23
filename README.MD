@@ -1,9 +1,9 @@
 # overview
-docker + wine. running windows app on linux and keeping host system clean.
+docker + wine for running windows apps (or games) on linux and keeping host system clean.
 
-only nvidia and alsa implemented, but you free to contribute and add amd, pulseaudio, etc., following design rules;
+only nvidia and alsa implemented, but you feel free to contribute and add amd, pulseaudio, etc., following design rules;
 
-steam-os will not be supported; recommended way to install steamos is using flatpak;
+steam-os will not be supported, only windows steam will; recommended way to install steamos is using flatpak;
 
 # nvidia prerequisites
 need to install nvidia-docker: https://github.com/NVIDIA/nvidia-docker/wiki/Installation
@@ -16,7 +16,7 @@ cd winetricks
 ```
 
 # example of running windows steam
-1. build and run achernetzov/winetricks
+1. run achernetsov/winetricks: ```cd winetricks && ./run.sh
 2. init wine prefix, for example: WINEPREFIX="$HOME/win32" WINEARCH=win32 wine wineboot
 3. download steam installator: wget https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
 4. install steam: WINEPREFIX="$HOME/win32" WINEARCH=win32 wine SteamSetup.exe

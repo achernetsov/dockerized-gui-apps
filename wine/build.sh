@@ -1,1 +1,1 @@
-docker build -t achernetzov/wine .
+docker build -t achernetsov/wine .

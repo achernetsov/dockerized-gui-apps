@@ -1,1 +1,1 @@
-docker build -t achernetzov/alsa .
+docker build -t achernetsov/alsa .

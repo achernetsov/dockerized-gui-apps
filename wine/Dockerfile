@@ -1,4 +1,4 @@
-FROM achernetzov/nvidia
+FROM achernetsov/nvidia
 
 # https://wiki.winehq.org/Ubuntu
 RUN apt-get update && apt-get install -y wget software-properties-common apt-transport-https

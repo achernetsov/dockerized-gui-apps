@@ -2,7 +2,7 @@
 # cuda removed
 # run using nvidia-docker https://github.com/NVIDIA/nvidia-docker/
 #FROM ubuntu:16.04
-FROM achernetzov/alsa
+FROM achernetsov/alsa
 
 LABEL com.nvidia.volumes.needed="nvidia_driver"
 

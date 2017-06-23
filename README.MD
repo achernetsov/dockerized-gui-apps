@@ -1,48 +1,38 @@
 # overview
-docker images to play games on linux, thus, keeping system configuration clean.
+docker + wine. running windows app on linux and keeping host system clean.
 
-for now only nvidia and alsa implemented, but you free to contribute amd, pulseaudio, etc., following design rules;
+only nvidia and alsa implemented, but you free to contribute and add amd, pulseaudio, etc., following design rules;
 
-windows steam (steam + wine) works (instructions will be soon)
+steam-os will not be supported; recommended way to install steamos is using flatpak;
 
-steam-os will not be supported; goals of this repo achieved install steam using flatpak;
+# nvidia prerequisites
+need to install nvidia-docker: https://github.com/NVIDIA/nvidia-docker/wiki/Installation
+need to run for nvidia-docker-plugin for nvidia images to work:
+```
+sudo nvidia-docker-plugin
+# now can run container
+cd winetricks
+./run.sh
+```
 
-## not working / in progress...
-1. steam-os failed on loading steam
-2. proper security for wine-data
+# example of running windows steam
+1. build and run achernetzov/winetricks
+2. init wine prefix, for example: WINEPREFIX="$HOME/win32" WINEARCH=win32 wine wineboot
+3. download steam installator: wget https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
+4. install steam: WINEPREFIX="$HOME/win32" WINEARCH=win32 wine SteamSetup.exe
+5. run steam WINEPREFIX="$HOME/win32" WINEARCH=win32 wine [path to steam.exe inside win32]
 
-## images must follow rules:
+you could create wine prefix for specific setup and use shared Steam folder. read wine documentation: https://www.winehq.org/
+
+# design rules:
 1. fine-grained for simple debugging, updating and interchanging
 2. testable: 
 to avoid running steam, install game, to only find that sound doesn't work, 
 every image should have simple test. for example, alsa have playsound.sh to check that sound works.
 
-# nvidia
-## prerequisites
-need to install nvidia-docker: https://github.com/NVIDIA/nvidia-docker/wiki/Installation
-need to run for nvidia-docker to work:
-```
-sudo nvidia-docker-plugin
-```
-
-# images hierarchy
-1. alsa
-2. nvidia:alsa
-
-for steam-os games:
-
-3. steamos:nvidia
-4. game-specific:steamos
-
-for windows-only games:
-
-3. wine:nvidia
-4. steamwin:wine
-5. game-specific:steamwin
-
 # improvements
 1. search for todo's in code
-2. maybe need to revert images: first steam then nvidia and alsa? from common to specific
+2. maybe need to refactor images hierarchy, it should be decided when amd or pulsaudio will be added
 
 # resources
 nvidia driver: https://github.com/NVIDIA/nvidia-docker/wiki/NVIDIA-driver
@@ -50,6 +40,3 @@ nvidia driver: https://github.com/NVIDIA/nvidia-docker/wiki/NVIDIA-driver
 glxgears "X11 no protocol found" error fix: https://unix.stackexchange.com/a/118826
 
 ms fonts: https://askubuntu.com/questions/86335/installing-other-fonts-on-wine
-
-# acknowledgements
-https://github.com/arno01/steam - some of steam-os work derived from here

@@ -10,4 +10,7 @@ RUN sudo wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src
 #run winetricks for prefix:
 #WINEPREFIX="$HOME/prefix32" WINEARCH=win32 winetricks --help
 
+#run dome app:
+# WINEPREFIX="$HOME/prefix32" WINEARCH=win32 wine app.exe
+
 

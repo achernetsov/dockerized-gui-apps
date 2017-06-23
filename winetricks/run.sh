@@ -14,6 +14,7 @@ nvidia-docker run --rm -it \
 -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket:ro \
 -v /dev/shm:/dev/shm \
 -v /etc/machine-id:/etc/machine-id \
+-v /etc/localtime:/etc/localtime \
 -v $(pwd)/../wine-home:/home/wine \
 --net=host \
 --shm-size="4G" \

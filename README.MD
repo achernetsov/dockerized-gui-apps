@@ -20,15 +20,15 @@ cd winetricks
 2. create directory to persist /home/wine between container sessions: ```mkdir wine-home```
 3. run nvidia-docker-plugin: ```sudo nvidia-docker-plugin```
 4. run achernetsov/winetricks: ```cd winetricks && ./run.sh```; after this command you will be inside container shell: ```wine@myhost:~$```
-5. init wine prefix, for example: WINEPREFIX="$HOME/win32" WINEARCH=win32 wine wineboot
+5. init wine prefix, for example: ```WINEPREFIX="$HOME/win32" WINEARCH=win32 wine wineboot```
 6. download steam installator: wget https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
-7. install steam: WINEPREFIX="$HOME/win32" WINEARCH=win32 wine SteamSetup.exe
-8. run steam WINEPREFIX="$HOME/win32" WINEARCH=win32 wine [path to steam.exe inside win32]
+7. install steam: ```WINEPREFIX="$HOME/win32" WINEARCH=win32 wine SteamSetup.exe```
+8. run steam ```WINEPREFIX="$HOME/win32" WINEARCH=win32 wine [path to steam.exe inside win32]```
 
 you could create wine prefix for specific setup and use shared Steam folder. read wine documentation: https://www.winehq.org/
 
 # design rules for Dockerfiles:
-1. fine-grained for simple debugging, updating and interchanging
+1. fine-grained with single responsibility for simple debugging, updating and interchanging
 2. testable: 
 to avoid running steam, install game, to only find that sound doesn't work, 
 every image should have simple test. for example, alsa have playsound.sh to check that sound works.

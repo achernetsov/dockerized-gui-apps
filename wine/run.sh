@@ -1,6 +1,3 @@
-# create steam-data in this directory. steam files will be here 
-
-xhost +
 nvidia-docker run --rm -it \
 --device /dev/snd \
 -e DISPLAY=$DISPLAY \

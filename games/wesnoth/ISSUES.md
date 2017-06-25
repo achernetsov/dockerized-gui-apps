@@ -1,0 +1,1 @@
+need to remove /home/gamer/.cache to fix X Error of failed request:  BadValue (integer parameter out of range for operation) on game startup

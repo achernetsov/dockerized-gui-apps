@@ -7,7 +7,8 @@ RUN dpkg --add-architecture i386 \
 && apt-key add Release.key \
 && apt-add-repository https://dl.winehq.org/wine-builds/ubuntu/ \
 && apt-get update \
-&& apt-get install --install-recommends -y winehq-stable
+#&& apt-get install --install-recommends -y winehq-stable
+&& apt-get install --install-recommends -y winehq-devel
 
 RUN apt-get install -y sudo \
 && echo 'wine ALL = NOPASSWD: ALL' > /etc/sudoers.d/wine && chmod 0440 /etc/sudoers.d/wine
